@@ -180,7 +180,22 @@ namespace DCBerserkTextureTool
                     {
                         //Filename, OrderIndex, PvrImageDataPointer
                         string[] pvrParams = Path.GetFileNameWithoutExtension(pvrFile).Split('_');
-                        int pvrPointer = Convert.ToInt32(pvrParams[2]);
+
+                        // Validation
+                        if(pvrParams.Length < 3)
+                        {
+                            MessageBox.Show("Folder has a invalid name? - Packing will stop now.");
+                            return;
+                        }
+
+                        // Some filenames have a underscore in it, so skip them over
+                        int paramOrder = 0;
+                        if (pvrParams.Length > 3)
+                        {
+                            paramOrder = pvrParams.Length - 3; //Filename, OrderIndex, PvrImageDataPointer
+                        }
+
+                        int pvrPointer = Convert.ToInt32(pvrParams[2 + paramOrder]);
                         binWriter.Seek(pvrPointer, SeekOrigin.Begin);
                         List<byte> tmpBuf = new List<byte>();
                         using (BinaryReader reader = new BinaryReader(new FileStream(pvrFile, FileMode.Open)))

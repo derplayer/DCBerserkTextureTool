@@ -98,7 +98,7 @@ namespace DCBerserkTextureTool
             this.button_packSingle.UseVisualStyleBackColor = true;
             this.button_packSingle.Click += new System.EventHandler(this.button_packSingle_Click);
             // 
-            // DCBerserkSubtitlesTool
+            // DCBerserkTextureTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,8 +112,8 @@ namespace DCBerserkTextureTool
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "DCBerserkSubtitlesTool";
-            this.Text = "Sword of the Berserk: TEXTURE Tool v1.0";
+            this.Name = "DCBerserkTextureTool";
+            this.Text = "Sword of the Berserk: TEXTURE Tool v1.1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
